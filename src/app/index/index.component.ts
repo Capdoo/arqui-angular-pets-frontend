@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  username: string;
+
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    this.username = this.tokenService.getUserName();
   }
 
 }
