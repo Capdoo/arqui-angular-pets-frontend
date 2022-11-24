@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
   public nuevo(nuevoUsuario: NewUserDto): Observable<any> {
-    const url = `${this.authURL}/nuevo`;
+    const url = `${this.authURL}/register`;
     return this.httpClient.post<any>(url, nuevoUsuario);
 
   }
