@@ -1,0 +1,24 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+.home-index{
+  min-height: 400px;
+  text-align:center;
+  justify-content: center;
+  background-color: bisque;
+  display: flex;
+  flex-wrap: wrap;
+}
+.in-flex{
+
+  flex: 1;
+  min-width: 350px;
+  /*padding: 25px; */
+}
+.img{
+  position: absolute;
+  border-radius: 31px;
+  height: 350px;
+  width: 350px;
+}
