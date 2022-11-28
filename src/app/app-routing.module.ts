@@ -5,6 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './auth/login.component';
 import { RegisterComponent } from './auth/register.component';
 import { LoginGuard } from './guards/login.guard';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'registro', component: RegisterComponent, canActivate: [LoginGuard] },
-  
+  { path: 'perfil', component: PerfilComponent },
+
   { path: '**', redirectTo: '', pathMatch: 'full' }
 
 ]
