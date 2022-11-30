@@ -11,10 +11,22 @@ import {CommonModule} from "@angular/common";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
-
+import {ReadPetComponent} from './read-pet/read-pet.component';
+import {PetsComponent} from './pets/pets.component';
+import {LostPetsComponent} from './lost-pets/lost-pets.component';
+import {RegisterLostComponent} from './register-lost/register-lost.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
-  declarations: [AppHomeComponent, HomeComponent, RegisterPetComponent],
+  declarations: [
+    AppHomeComponent,
+    HomeComponent,
+    RegisterPetComponent,
+    ReadPetComponent,
+    PetsComponent,
+    LostPetsComponent,
+    RegisterLostComponent
+  ],
   imports: [
     AppHomeRoutingModule,
     MatFormFieldModule,
@@ -23,7 +35,8 @@ import {MatButtonModule} from "@angular/material/button";
     CommonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class AppHomeModule {

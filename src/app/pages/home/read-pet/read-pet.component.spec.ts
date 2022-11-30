@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {RegisterPetComponent} from "./register-pet.component";
 
-describe('Register.PetComponent', () => {
-  let component: RegisterPetComponent;
-  let fixture: ComponentFixture<RegisterPetComponent>;
+import { ReadPetComponent } from './read-pet.component';
+
+describe('ReadPetComponent', () => {
+  let component: ReadPetComponent;
+  let fixture: ComponentFixture<ReadPetComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisterPetComponent ]
+      declarations: [ ReadPetComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterPetComponent);
+    fixture = TestBed.createComponent(ReadPetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

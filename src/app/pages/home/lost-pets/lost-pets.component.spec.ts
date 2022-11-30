@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {RegisterPetComponent} from "./register-pet.component";
 
-describe('Register.PetComponent', () => {
-  let component: RegisterPetComponent;
-  let fixture: ComponentFixture<RegisterPetComponent>;
+import { LostPetsComponent } from './lost-pets.component';
+
+describe('LostPetComponent', () => {
+  let component: LostPetsComponent;
+  let fixture: ComponentFixture<LostPetsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisterPetComponent ]
+      declarations: [ LostPetsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterPetComponent);
+    fixture = TestBed.createComponent(LostPetsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

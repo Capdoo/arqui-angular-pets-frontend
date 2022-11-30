@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    window.location.href = '/home/register-pet';
+    this.router.navigate(['/home/register-pet']).then();
+  }
+
+  verMascotas() {
+    this.router.navigate(['/home/pets']).then();
+  }
+
+  verPerdidos() {
+    this.router.navigate(['/home/lost-pets']).then();
+  }
+
+  perdido() {
+    this.router.navigate(['/home/register-lost']).then();
   }
 }
