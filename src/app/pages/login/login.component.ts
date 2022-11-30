@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { LoginUserDto } from '../models/login-user-dto';
-
 import { ToastrService } from 'ngx-toastr';
-import { TokenService } from '../services/token.service';
+import {LoginUserDto} from "../../models/login-user-dto";
+import {TokenService} from "../../services/token.service";
+import {AuthService} from "../../services/auth.service";
+
 
 
 @Component({

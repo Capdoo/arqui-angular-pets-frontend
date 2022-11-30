@@ -6,7 +6,7 @@ import { TokenService } from '../services/token.service';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginGuard implements CanActivate {
+export class HomeGuard implements CanActivate {
 
   constructor(
     private tokenService: TokenService,
@@ -14,7 +14,7 @@ export class LoginGuard implements CanActivate {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    return !this.tokenService.isLogged();
+    return this.tokenService.isLogged();
   }
 
 }
