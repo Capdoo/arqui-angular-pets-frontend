@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TokenService} from "../../services/token.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -11,18 +12,19 @@ export class HeaderComponent implements OnInit {
   isLogged = false;
   isAdmin = false;
 
-  constructor(private tokenService: TokenService) { }
+  constructor(private tokenService: TokenService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.isLogged = this.tokenService.isLogged();
     this.isAdmin = this.tokenService.isAdmin();
   }
 
-  onLogOut():void {
+  onLogOut(): void {
     this.tokenService.logOut();
   }
 
   redireccionar() {
-    this.isLogged ? window.location.href = '/home' : window.location.href = '/';
+    this.isLogged ? this.router.navigate(['/home']) : this.router.navigate(['/login']);
   }
 }
