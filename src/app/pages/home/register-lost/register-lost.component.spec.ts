@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RegisterLostComponent } from './register-lost.component';
+import {RegisterLostComponent} from './register-lost.component';
 
 describe('RegisterLostComponent', () => {
   let component: RegisterLostComponent;
