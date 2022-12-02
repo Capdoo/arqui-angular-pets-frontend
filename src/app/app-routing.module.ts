@@ -9,9 +9,13 @@ import {HomeGuard} from "./guards/home.guard";
 
 
 const routes: Routes = [
-
   {
     path: '',
+    redirectTo: 'index',
+    pathMatch: 'full'
+  },
+  {
+    path: 'index',
     component: IndexComponent
   },
   {
@@ -32,7 +36,7 @@ const routes: Routes = [
 
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'index'
   }
 
 ]

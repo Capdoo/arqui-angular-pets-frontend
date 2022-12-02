@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TokenService} from "../../services/token.service";
+import {TokenService} from "../../shared/services/token.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -25,6 +25,6 @@ export class HeaderComponent implements OnInit {
   }
 
   redireccionar() {
-    this.isLogged ? this.router.navigate(['/home']) : this.router.navigate(['/login']);
+    this.isLogged ? this.router.navigate(['/home']) : this.router.navigate(['/index']);
   }
 }

@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import {LoginUserDto} from "../../models/login-user-dto";
-import {TokenService} from "../../services/token.service";
-import {AuthService} from "../../services/auth.service";
-
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
+import {LoginUserDto} from "../../shared/models/login-user-dto";
+import {TokenService} from "../../shared/services/token.service";
+import {AuthService} from "../../shared/services/auth.service";
 
 
 @Component({
@@ -34,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginUsuario).subscribe(
       data => {
         this.tokenService.setToken(data.token);
-        this.router.navigate(['/']);
+        window.location.reload();
       },
       err => {
         this.errMsj = err.error.mensaje;

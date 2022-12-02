@@ -1,16 +1,58 @@
-<div style="padding-bottom: 30px">
-  <p class="text-grid">Lista de mascota</p>
-  <div class="grid">
-    <div *ngFor="let num of [1,2,3,4,5,6,7,8,9,10,11,12,14,15,16]" class="content">
-      <mat-card class="example-card" style="cursor: pointer" (click)="open(num)">
-        <img mat-card-image  src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-             alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p> Nombre: {{num}} <br>
-            Nombre: {{num}}<br>
-            Nombre: {{num}}</p>
-        </mat-card-content>
-      </mat-card>
+<div style="padding: 0 20px">
+  <p style="text-align: center;font-size: xx-large">Datos de la mascota</p>
+  <div style="display: flex">
+
+    <div class="form-group-register">
+      <mat-form-field appearance="fill">
+        <mat-label style="color: black">Nombre</mat-label>
+        <input matInput [value]="petDTO.name" style="color: black" disabled>
+      </mat-form-field>
+
+      <div style="display: flex; justify-content: space-between;">
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label style="color: black">Género</mat-label>
+          <input matInput [value]="petDTO.gender" style="color: black" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label style="color: black">Fecha de Nacimiento</mat-label>
+          <input matInput [value]="petDTO.birthDate" style="color: black" disabled>
+        </mat-form-field>
+      </div>
+
+      <div style="display: flex; justify-content: space-between;">
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label style="color: black">Color</mat-label>
+          <input matInput [value]="petDTO.colour" style="color: black" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label style="color: black">Tamaño</mat-label>
+          <input matInput [value]="petDTO.size" style="color: black" disabled>
+        </mat-form-field>
+      </div>
+
+      <div style="display: flex; justify-content: space-between;">
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label style="color: black">Especie</mat-label>
+          <input matInput [value]="petDTO.species" style="color: black" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label style="color: black">Raza</mat-label>
+          <input matInput [value]="petDTO.breed" style="color: black" disabled>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label style="color: black">Características</mat-label>
+        <textarea matInput [value]="petDTO.characteristic"
+                  rows="5" style="resize: none; color: black" disabled></textarea>
+      </mat-form-field>
+    </div>
+    <div class="form-image">
+      <img [src]="'data:image/jpeg;base64,' + petDTO.encoded" class="preview" alt="Foto de Preview">
     </div>
   </div>
+
 </div>

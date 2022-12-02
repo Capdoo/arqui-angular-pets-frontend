@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-lost-pets',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LostPetsComponent implements OnInit {
 
-  constructor() { }
+  items: [{ name: "franco" }, { name: "franco" }, { name: "franco" }, { name: "franco" }, { name: "franco" }, { name: "franco" }, { name: "franco" }];
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
+  open(num: number) {
+    this.router.navigate(['/home/read-pet']);
+  }
 }

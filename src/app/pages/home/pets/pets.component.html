@@ -1,1 +1,16 @@
-<p>pets works!</p>
+<div style="padding-bottom: 30px">
+  <p class="text-grid">Lista de mascota</p>
+  <div class="grid">
+    <div *ngFor="let num of [1,2,3,4,5,6,7,8,9,10,11,12,14,15,16]" class="content">
+      <mat-card class="example-card" style="cursor: pointer" (click)="open(num)">
+        <img mat-card-image  src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+             alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p> Nombre: {{num}} <br>
+            Nombre: {{num}}<br>
+            Nombre: {{num}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

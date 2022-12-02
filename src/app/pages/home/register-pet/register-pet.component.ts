@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Observable} from "rxjs";
+import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
+import {DetailsService} from "../../../shared/services/details/details.service";
 
 @Component({
   selector: 'app-register-pet',
@@ -8,6 +9,9 @@ import {Observable} from "rxjs";
   styleUrls: ['./register-pet.component.css']
 })
 export class RegisterPetComponent {
+
+  // Combos
+  comboBreedxSpecie: BreedxSpecieDTO[]
 
   // FormControls
   name = new FormControl('', [Validators.required]);
@@ -33,7 +37,9 @@ export class RegisterPetComponent {
   });
   private srcResult: any;
 
-  constructor() {
+  constructor(detailService: DetailsService) {
+    // detailService.getDetailsAll().subscribe(value => console.log(value));
+    this.comboBreedxSpecie = detailService.getDetailsAll();
   }
 
 

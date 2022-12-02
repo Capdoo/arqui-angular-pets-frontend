@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {DetailsService} from "../../../shared/services/details/details.service";
+import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,10 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public router: Router) {
+  comboBreedxSpecie: BreedxSpecieDTO[]
+
+  constructor(private router: Router, private detailService: DetailsService) {
+
   }
 
   ngOnInit(): void {

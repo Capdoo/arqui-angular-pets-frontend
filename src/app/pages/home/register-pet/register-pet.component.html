@@ -40,13 +40,23 @@
       <div style="display: flex; justify-content: space-between;">
         <mat-form-field appearance="fill" style="width: 45%;">
           <mat-label>Especie</mat-label>
-          <input matInput [formControl]="species" required>
+          <mat-select>
+            <mat-option *ngFor="let food of comboBreedxSpecie" ngDefaultControl [value]="food.species"
+                        [formControl]="species" required>
+              {{food.species}}
+            </mat-option>
+          </mat-select>
           <mat-error *ngIf="species.invalid">{{getErrorMessage(species)}}</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill" style="width: 45%;">
           <mat-label>Raza</mat-label>
-          <input matInput [formControl]="breed" required>
+          <mat-select>
+            <mat-option *ngFor="let food of comboBreedxSpecie" ngDefaultControl [value]="food.breed"
+                        [formControl]="breed" required>
+              {{food.breed}}
+            </mat-option>
+          </mat-select>
           <mat-error *ngIf="breed.invalid">{{getErrorMessage(breed)}}</mat-error>
         </mat-form-field>
       </div>
