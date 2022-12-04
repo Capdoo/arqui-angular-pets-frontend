@@ -38,8 +38,8 @@ export class RegisterPetComponent {
   private srcResult: any;
 
   constructor(detailService: DetailsService) {
-    // detailService.getDetailsAll().subscribe(value => console.log(value));
-    this.comboBreedxSpecie = detailService.getDetailsAll();
+    detailService.getDetailsAll().subscribe(value => console.log(value));
+    // this.comboBreedxSpecie = detailService.getDetailsAll();
   }
 
 
