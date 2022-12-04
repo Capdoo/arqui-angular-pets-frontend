@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ReadPetComponent } from './read-pet.component';
+import {ReadPetComponent} from './read-pet.component';
 
 describe('ReadPetComponent', () => {
   let component: ReadPetComponent;

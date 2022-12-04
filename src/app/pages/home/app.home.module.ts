@@ -16,6 +16,7 @@ import {PetsComponent} from './pets/pets.component';
 import {LostPetsComponent} from './lost-pets/lost-pets.component';
 import {RegisterLostComponent} from './register-lost/register-lost.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -27,17 +28,18 @@ import {MatCardModule} from "@angular/material/card";
     LostPetsComponent,
     RegisterLostComponent
   ],
-  imports: [
-    AppHomeRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    CommonModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatButtonModule,
-    MatCardModule
-  ]
+    imports: [
+        AppHomeRoutingModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        CommonModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatButtonModule,
+        MatCardModule,
+        MatSelectModule
+    ]
 })
 export class AppHomeModule {
 }

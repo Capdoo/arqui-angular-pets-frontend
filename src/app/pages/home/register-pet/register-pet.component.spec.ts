@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {RegisterPetComponent} from "./register-pet.component";
 
 describe('Register.PetComponent', () => {

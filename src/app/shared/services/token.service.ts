@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 
 const TOKEN_KEY = 'AuthToken';
 @Injectable({
@@ -20,10 +20,8 @@ export class TokenService {
   }
 
   public isLogged(): boolean {
-    if (this.getToken()) {
-      return true;
-    } 
-    return false;
+    return !!this.getToken();
+
   }
 
   public getUserName(): string {
@@ -35,8 +33,7 @@ export class TokenService {
     const payloadDecoded = atob(payload);
     const values = JSON.parse(payloadDecoded);
     //Sub es username, lo otro es roles
-    const username = values.sub;
-    return username;
+    return values.sub;
   }
 
   public isAdmin(): boolean {
@@ -50,15 +47,13 @@ export class TokenService {
     const values = JSON.parse(payloadDecoded);
     const roles = values.roles;
 
-    if (roles.indexOf('ROLE_ADMIN') < 0) {
-      return false;
-    }
-    return true;
+    return roles.indexOf('ROLE_ADMIN') >= 0;
+
   }
 
   public logOut(): void {
     window.localStorage.clear();
-    this.router.navigate(['/login']);
+    window.location.reload();
   }
 
 
