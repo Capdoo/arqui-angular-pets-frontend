@@ -10,13 +10,19 @@ import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
 })
 export class HomeComponent implements OnInit {
 
-  comboBreedxSpecie: BreedxSpecieDTO[]
+  comboBreedxSpecie: BreedxSpecieDTO[];
+  ImgenPerfil: String;
+  Name: String;
+  Username:String;
 
   constructor(private router: Router, private detailService: DetailsService) {
 
   }
 
   ngOnInit(): void {
+    this.ImgenPerfil = '../../../../assets/fotoPerfil.jpg';
+    this.Name = 'María L.';
+    this.Username="@"+"marial";
   }
 
   onSubmit() {

@@ -1,5 +1,6 @@
-<div class="conatiner d-flex justify-content-center">
-    <div class="card">
+<div>
+<div class="container text-container">
+    <div class="contenedor">
         <!-- Para las tabs -->
         <div class="card-header">
             <ul class="nav nav-tabs">
@@ -16,7 +17,7 @@
         </div>
 
         <!-- Para el formulario de Login -->
-        <div class="card-body">
+        <div class="card-body ">
 
             <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
                 <!-- Para el nombre de usuario -->
@@ -34,7 +35,7 @@
 
                 <!-- Para los botones -->
                 <div class="form-group">
-                    <button class="btn btn-outline-success btn-block" [disabled]="!f.valid" type="submit">
+                    <button class=" button-login " [disabled]="!f.valid" type="submit">
                         <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Iniciar Sesion
                     </button>

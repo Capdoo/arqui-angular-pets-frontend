@@ -34,14 +34,17 @@ export class LoginComponent implements OnInit {
       data => {
         this.tokenService.setToken(data.token);
         window.location.reload();
-      },
-      err => {
+      }
+      ,err => {
         this.errMsj = err.error.mensaje;
         this.toastr.error(err.error.mensaje, 'FAIL', {
           timeOut: 3000, positionClass: 'toast-top-center',
         });
       }
     )
+    console.log(this.loginUsuario);
+    console.log(this.nombreUsuario);
+    console.log(this.tokenService);
   }
 
 }
