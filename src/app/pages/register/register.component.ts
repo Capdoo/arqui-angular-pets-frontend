@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
   address: string;
   email: string;
   password: string;
+  encoded: string;
 
   errMsj: string;
 
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.encoded = "textbase65";
   }
 
   onRegister(): void{
@@ -46,7 +48,8 @@ export class RegisterComponent implements OnInit {
       this.phone,
       this.address,
       this.email,
-      this.password);
+      this.password,
+      this.encoded);
     this.authService.nuevo(this.newUser).subscribe(
       data => {
         this.toastr.success('Cuenta creada', 'OK', {
