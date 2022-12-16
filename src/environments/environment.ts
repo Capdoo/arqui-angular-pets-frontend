@@ -12,7 +12,7 @@ export const environment = {
   detailsController: 'details',
   petsController: 'pets',
   //controlador pendiente
-  homeController: 'home',
+  homeController: 'pets/read-user',
 
   // Methods
   readMethod: 'read',

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { TokenService } from './token.service';
 import { environment } from 'src/environments/environment';
+import { PetDto } from '../models/pet-dto';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +22,10 @@ export class HomeServicesService {
       })
     };
   }
-  private createCompeteRouter = (route: string) => {
-    return `${environment.baseURL}/${environment.homeController}/${environment.readMethod}/${route}`;
+  private createCompeteRouter = () => {
+    return `${environment.baseURL}/${environment.homeController}`;
+  }
+  public getAllPets() {
+    return this.httpClient.get<PetDto[]>(this.createCompeteRouter(), this.generateHeaders());
   }
 }

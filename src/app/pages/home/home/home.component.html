@@ -14,11 +14,9 @@
       <p>
         {{ Username }}
       </p>
-      <ul>
-        Lista de mascotas
-        <li>Lucho</li>
-        <li>Zeus</li>
-        <li>Lucho</li>
+      <p>Lista de mascotas</p>
+      <ul *ngFor="let pet of comboPet">
+        <li>{{pet.id}}. {{pet.name}}</li>
       </ul>
       <div class="buttons-perfil">
         <button (click)="perdido()">
