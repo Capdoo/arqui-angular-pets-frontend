@@ -14,7 +14,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {LoginComponent} from "./pages/login/login.component";
 import {RegisterComponent} from "./pages/register/register.component";
 import {PerfilComponent} from "./components/perfil/perfil.component";
-import {interceptorProvider} from "./shared/services/prod-interceptors.service";
+import {interceptorProvider} from "./providers/interceptors/prod-interceptors.service";
 
 
 @NgModule({

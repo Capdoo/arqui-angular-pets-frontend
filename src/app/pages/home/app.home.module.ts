@@ -17,6 +17,8 @@ import {LostPetsComponent} from './lost-pets/lost-pets.component';
 import {RegisterLostComponent} from './register-lost/register-lost.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatSelectModule} from "@angular/material/select";
+import {SafePipePipe} from "../../providers/pipes/safe-pipe.pipe";
+import {AppModule} from "../../app.module";
 
 @NgModule({
   declarations: [
@@ -26,20 +28,22 @@ import {MatSelectModule} from "@angular/material/select";
     ReadPetComponent,
     PetsComponent,
     LostPetsComponent,
-    RegisterLostComponent
+    RegisterLostComponent,
+    SafePipePipe
   ],
-    imports: [
-        AppHomeRoutingModule,
-        MatFormFieldModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        CommonModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatButtonModule,
-        MatCardModule,
-        MatSelectModule
-    ]
+  imports: [
+    AppHomeRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    CommonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatCardModule,
+    MatSelectModule
+  ],
+  providers: [SafePipePipe]
 })
 export class AppHomeModule {
 }

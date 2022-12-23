@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {DetailsService} from "../../../shared/services/details/details.service";
 import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
-import {HomeServicesService} from "../../../shared/services/home-services.service";
+import {HomeServicesService} from "../../../shared/services/general/home-services.service";
 import {PetDto} from "../../../shared/models/pet-dto";
 import {UserDetailsGuard} from "../../../shared/services/userDetails/user-details.guard";
 @Component({

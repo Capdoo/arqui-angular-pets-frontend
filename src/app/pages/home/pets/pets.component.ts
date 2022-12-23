@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {PetsService} from "../../../shared/services/pets/pets.service";
+import {lastValueFrom} from "rxjs";
+import {PetDto} from "../../../shared/models/pet-dto";
 
 @Component({
   selector: 'app-pets',
@@ -7,15 +10,23 @@ import {Router} from "@angular/router";
   styleUrls: ['./pets.component.css']
 })
 export class PetsComponent implements OnInit {
-  items: [{ name: "franco" }, { name: "franco" }, { name: "franco" }, { name: "franco" }, { name: "franco" }, { name: "franco" }, { name: "franco" }];
 
-  constructor(private router: Router) {
+  comboPets: PetDto[] = [];
+
+  constructor(
+    private router: Router,
+    private petsService: PetsService
+  ) {
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    await lastValueFrom(this.petsService.readAllByUser())
+      .then(value => {
+        this.comboPets = value;
+      });
   }
 
-  open(num: number) {
+  open(petDto: PetDto) {
     this.router.navigate(['/home/read-pet']);
   }
 

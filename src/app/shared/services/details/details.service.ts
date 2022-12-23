@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
-import {TokenService} from "../token.service";
+import {TokenService} from "../general/token.service";
 import {SpecieDTO} from "../../models/specieDTO";
 import {BreedDTO} from "../../models/breedDTO";
 import {BreedxSpecieDTO} from "../../models/breedxSpecieDTO";

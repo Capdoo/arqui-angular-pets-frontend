@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { TokenService } from './token.service';
 import { environment } from 'src/environments/environment';
-import { PetDto } from '../models/pet-dto';
+import { PetDto } from '../../models/pet-dto';
 import { Observable } from 'rxjs';
 
 @Injectable({

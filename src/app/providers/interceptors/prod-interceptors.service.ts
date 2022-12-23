@@ -13,9 +13,9 @@ import {Observable, throwError} from 'rxjs';
 
 
 import {ToastrService} from 'ngx-toastr';
-import {JwtDTO} from '../models/jwt-dto';
-import {TokenService} from "./token.service";
-import {AuthService} from "./auth.service";
+import {JwtDTO} from '../../shared/models/jwt-dto';
+import {TokenService} from "../../shared/services/general/token.service";
+import {AuthService} from "../../shared/services/general/auth.service";
 
 
 const AUTHORIZATION = 'Authorization';
