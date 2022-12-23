@@ -12,7 +12,7 @@ import {JwtDTO} from '../models/jwt-dto';
 })
 export class AuthService {
 
-  authURL = environment.authURL;
+  authURL = environment.baseURL+'/'+environment.authController;
 
   constructor(private httpClient: HttpClient) { }
 

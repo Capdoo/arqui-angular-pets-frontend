@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {LoginUserDto} from "../../shared/models/login-user-dto";
 import {TokenService} from "../../shared/services/token.service";
 import {AuthService} from "../../shared/services/auth.service";
+import Swal from "sweetalert2";
+import {lastValueFrom} from "rxjs";
 
 
 @Component({
@@ -11,7 +13,7 @@ import {AuthService} from "../../shared/services/auth.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   loginUsuario: LoginUserDto;
   nombreUsuario: string;
@@ -23,28 +25,25 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
-  ) { }
-
-  ngOnInit(): void {
+  ) {
   }
 
-  onLogin(): void{
+  async onLogin() {
     this.loginUsuario = new LoginUserDto(this.nombreUsuario, this.password);
-    this.authService.login(this.loginUsuario).subscribe(
-      data => {
-        this.tokenService.setToken(data.token);
+    Swal.fire({
+      title: 'Espere por favor',
+      didOpen: () => Swal.showLoading(null),
+      allowOutsideClick: false
+    }).then();
+    await lastValueFrom(this.authService.login(this.loginUsuario))
+      .then(value => {
+        this.tokenService.setToken(value.token);
         window.location.reload();
-      }
-      ,err => {
-        this.errMsj = err.error.mensaje;
-        this.toastr.error(err.error.mensaje, 'FAIL', {
+      }).catch(reason => {
+        this.errMsj = reason.error.mensaje;
+        this.toastr.error(reason.error.mensaje, 'FAIL', {
           timeOut: 3000, positionClass: 'toast-top-center',
         });
-      }
-    )
-    console.log(this.loginUsuario);
-    console.log(this.nombreUsuario);
-    console.log(this.tokenService);
+      }).finally(() => Swal.close());
   }
-
 }

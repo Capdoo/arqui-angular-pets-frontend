@@ -1,3 +1,3 @@
 export class BreedDTO {
-  name: string;
+  data: string;
 }

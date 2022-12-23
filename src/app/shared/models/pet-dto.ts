@@ -5,7 +5,6 @@ export class PetDto {
   birthDate: string;
   registerDate: string;
   colour: string;
-  specificBreed: string;
   characteristic: string;
   size: string;
   species: string;
@@ -13,6 +12,4 @@ export class PetDto {
   idOwner: number;
   idDetail: number;
   encoded: string;
-  urlLink: string;
-
 }

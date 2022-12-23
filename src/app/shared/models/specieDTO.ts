@@ -1,3 +1,3 @@
 export class SpecieDTO {
-  name: string;
+  data: string;
 }

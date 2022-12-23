@@ -16,21 +16,14 @@ export class DetailsService {
 
   public getDetailsAll() {
     return this.httpClient.get<BreedxSpecieDTO[]>(this.createCompleteRoute(""), this.generateHeaders());
-    // return [
-    //   {id: 1, species: "GATO", breed: "SIAMES"},
-    //   {id: 2, species: "GATO", breed: "PERSA"},
-    //   {id: 3, species: "GATO", breed: "COREANO"},
-    //   {id: 4, species: "PERRO", breed: "DOBERMAN"},
-    //   {id: 5, species: "PERRO", breed: "PASTOR ALEMAN"},
-    //   {id: 6, species: "PERRO", breed: "LABRADOR"}]
   }
 
   public getDetailsSpecies() {
-    return this.httpClient.get<SpecieDTO[]>(this.createCompleteRoute(""), this.generateHeaders());
+    return this.httpClient.get<SpecieDTO[]>(this.createCompleteRoute("species"), this.generateHeaders());
   }
 
-  public getDetailsBreedBySpecies() {
-    return this.httpClient.get<BreedDTO[]>(this.createCompleteRoute(""), this.generateHeaders());
+  public getDetailsBreedBySpecies(species: string) {
+    return this.httpClient.get<BreedDTO[]>(this.createCompleteRoute("breed?species=" + species), this.generateHeaders());
   }
 
   private generateHeaders = () => {
