@@ -5,6 +5,7 @@ import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
 import {HomeServicesService} from "../../../shared/services/general/home-services.service";
 import {PetDto} from "../../../shared/models/pet-dto";
 import {UserDetailsGuard} from "../../../shared/services/userDetails/user-details.guard";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,8 +18,10 @@ export class HomeComponent implements OnInit {
   ImgenPerfil: String;
   Name: String;
   Username:String;
+
   //variable que almacena la imagen de perfil del usuario
   imagenPerfil: string;
+
   //variable que almacena la imagen de perfil del usuario
 
   constructor(private router: Router, private detailService: DetailsService, private homeServicesService: HomeServicesService, private userDetailsGuard: UserDetailsGuard) {
@@ -37,11 +40,9 @@ export class HomeComponent implements OnInit {
     //console.log(this.comboPet);
 
     this.userDetailsGuard.getUserDetails().subscribe(data => {
-      console.log(data);
       this.Username="@"+data.username;
       this.Name=data.lastName + " " + data.surName;
       this.ImgenPerfil=data.encoded;
-      console.log(this.ImgenPerfil);
       //variable que almacena la respuesta de lafunción función base64ToJpg
 
 
@@ -66,18 +67,6 @@ export class HomeComponent implements OnInit {
   perdido() {
     this.router.navigate(['/home/register-lost']).then();
   }
-  base64ToJpeg(base64: string): HTMLImageElement {
-    // Creamos un elemento de imagen
-    const imgElement = document.createElement('img');
-
-    // Establecemos el atributo src de la imagen como una URL codificada en base64
-    imgElement.src = `data:image/jpeg;base64,${base64}`;
-
-    // Devolvemos el elemento de imagen
-    return imgElement;
-  }
-  //convertir imagen de base64 a imagen
-
 
 
 }

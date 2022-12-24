@@ -19,6 +19,6 @@ export class NewUserDto {
         this.address = address;
         this.email = email;
         this.password = password;
-        this.encoded = "textbase65";
+        this.encoded = encoded;
     }
 }

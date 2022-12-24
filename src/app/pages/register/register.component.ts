@@ -12,8 +12,6 @@ import {AuthService} from "../../shared/services/general/auth.service";
 })
 export class RegisterComponent implements OnInit {
 
-  newUser: NewUserDto;
-
   username: string;
   dni: string;
   firstName: string;
@@ -26,7 +24,6 @@ export class RegisterComponent implements OnInit {
   encoded: string;
 
   errMsj: string;
-
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
@@ -35,11 +32,11 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.encoded = "textbase65";
   }
 
   onRegister(): void{
-    this.newUser = new NewUserDto(
+
+    const newUser = new NewUserDto(
       this.username,
       this.dni,
       this.firstName,
@@ -50,7 +47,8 @@ export class RegisterComponent implements OnInit {
       this.email,
       this.password,
       this.encoded);
-    this.authService.nuevo(this.newUser).subscribe(
+
+    this.authService.nuevo(newUser).subscribe(
       data => {
         this.toastr.success('Cuenta creada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center',
@@ -64,6 +62,16 @@ export class RegisterComponent implements OnInit {
         });
       }
     )
+  }
+ onFileSelected(event: any) {
+    let files = event.target.files;
+    if (files && files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.encoded= e.target.result;
+      };
+      reader.readAsDataURL(files[0]);
+    }
   }
 
 }
