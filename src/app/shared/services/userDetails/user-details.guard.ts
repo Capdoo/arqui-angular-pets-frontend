@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import { TokenService } from '../token.service';
+import { TokenService } from '../general/token.service';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { NewUserDto } from '../../models/new-user-dto';
