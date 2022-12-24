@@ -7,20 +7,6 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end">
-      <div style="width: 20%; display: flex; justify-content: space-evenly;">
-        <button class="btn btn-dark" type="button" *ngIf="isLogged">
-          <i class="fa-solid fa-house"></i> Home
-        </button>
-
-        <button class="btn btn-outline-light" type="button" *ngIf="isLogged">
-          <i class="fa-solid fa-list"></i> Lista
-        </button>
-
-        <button class="btn btn-outline-light" type="button" *ngIf="isLogged">
-          <i class="fa-solid fa-square-plus"></i> Nuevo
-        </button>
-      </div>
-
       <!-- Para cerrar sesion e iniciar sesion -->
       <form class="form-inline my-2 my-lg-0">
         <button class="btn btn-primary" *ngIf="!isLogged" routerLink="/login" type="submit">

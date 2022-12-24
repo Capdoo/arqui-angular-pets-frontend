@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { TokenService } from '../general/token.service';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
 import { NewUserDto } from '../../models/new-user-dto';
 
 
@@ -31,7 +30,7 @@ export class UserDetailsGuard {
     return this.httpClient.get<PetDto[]>(this.createCompeteRouter(), this.generateHeaders());
   }
   */
-  public getUserDetails(): Observable<NewUserDto> {
+  public getUserDetails() {
     return this.httpClient.get<NewUserDto>(this.createCompeteRouter(), this.generateHeaders());
   }
 }

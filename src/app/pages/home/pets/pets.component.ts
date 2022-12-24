@@ -41,6 +41,4 @@ export class PetsComponent implements OnInit {
     sessionStorage.setItem('pet', JSON.stringify(petDto));
     this.router.navigate(['/home/read-pet']).then();
   }
-
-
 }

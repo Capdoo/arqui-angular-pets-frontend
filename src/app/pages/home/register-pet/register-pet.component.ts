@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {DetailsService} from "../../../shared/services/details/details.service";
 import Swal from "sweetalert2";
@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
   templateUrl: './register-pet.component.html',
   styleUrls: ['./register-pet.component.css']
 })
-export class RegisterPetComponent {
+export class RegisterPetComponent implements OnInit {
 
   // Variables
   encodedValue = 'assets/img-default.jpg';
@@ -49,15 +49,17 @@ export class RegisterPetComponent {
     private petsService: PetsService,
     private router: Router
   ) {
+  }
+
+  async ngOnInit() {
     Swal.fire({
       title: 'Espere por favor',
       didOpen: () => Swal.showLoading(null)
     }).then();
-    detailService.getDetailsSpecies().subscribe(value => {
-      this.comboSpecie = value;
-      Swal.close();
-    });
-
+    await lastValueFrom(this.detailService.getDetailsSpecies())
+      .then(data => this.comboSpecie = data)
+      .catch(e => Swal.fire({icon: 'error', title: 'Error al cargar las especies', text: e.error.message}))
+      .finally(() => Swal.close());
   }
 
   onFileSelected(event: any) {
