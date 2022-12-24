@@ -5,7 +5,7 @@ import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
 import {HomeServicesService} from "../../../shared/services/general/home-services.service";
 import {PetDto} from "../../../shared/models/pet-dto";
 import {UserDetailsGuard} from "../../../shared/services/userDetails/user-details.guard";
-
+import {SafePipePipe} from "../../../providers/pipes/safe-pipe.pipe";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

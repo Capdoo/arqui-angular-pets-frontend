@@ -1,5 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {RegisterPetComponent} from "./register-pet.component";
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('Register.PetComponent', () => {
   let component: RegisterPetComponent;
@@ -7,6 +9,7 @@ describe('Register.PetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [RouterTestingModule, HttpClientTestingModule],
       declarations: [ RegisterPetComponent ]
     })
     .compileComponents();

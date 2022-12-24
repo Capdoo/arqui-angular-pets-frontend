@@ -10,11 +10,12 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('El componente debe existir ', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+
 
   it(`should have as title 'arqui-angular-pets-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
