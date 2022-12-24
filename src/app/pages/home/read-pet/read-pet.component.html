@@ -5,53 +5,53 @@
     <div class="form-group-register">
       <mat-form-field appearance="fill">
         <mat-label style="color: black">Nombre</mat-label>
-        <input matInput [value]="petDTO.name" style="color: black" disabled>
+        <input matInput [value]="petDto.name" style="color: black" disabled>
       </mat-form-field>
 
       <div style="display: flex; justify-content: space-between;">
         <mat-form-field appearance="fill" style="width: 45%;">
           <mat-label style="color: black">Género</mat-label>
-          <input matInput [value]="petDTO.gender" style="color: black" disabled>
+          <input matInput [value]="petDto.gender" style="color: black" disabled>
         </mat-form-field>
 
         <mat-form-field appearance="fill" style="width: 45%;">
           <mat-label style="color: black">Fecha de Nacimiento</mat-label>
-          <input matInput [value]="petDTO.birthDate" style="color: black" disabled>
+          <input matInput [value]="petDto.birthDate" style="color: black" disabled>
         </mat-form-field>
       </div>
 
       <div style="display: flex; justify-content: space-between;">
         <mat-form-field appearance="fill" style="width: 45%;">
           <mat-label style="color: black">Color</mat-label>
-          <input matInput [value]="petDTO.colour" style="color: black" disabled>
+          <input matInput [value]="petDto.colour" style="color: black" disabled>
         </mat-form-field>
 
         <mat-form-field appearance="fill" style="width: 45%;">
           <mat-label style="color: black">Tamaño</mat-label>
-          <input matInput [value]="petDTO.size" style="color: black" disabled>
+          <input matInput [value]="petDto.size" style="color: black" disabled>
         </mat-form-field>
       </div>
 
       <div style="display: flex; justify-content: space-between;">
         <mat-form-field appearance="fill" style="width: 45%;">
           <mat-label style="color: black">Especie</mat-label>
-          <input matInput [value]="petDTO.species" style="color: black" disabled>
+          <input matInput [value]="petDto.species" style="color: black" disabled>
         </mat-form-field>
 
         <mat-form-field appearance="fill" style="width: 45%;">
           <mat-label style="color: black">Raza</mat-label>
-          <input matInput [value]="petDTO.breed" style="color: black" disabled>
+          <input matInput [value]="petDto.breed" style="color: black" disabled>
         </mat-form-field>
       </div>
 
       <mat-form-field appearance="fill">
         <mat-label style="color: black">Características</mat-label>
-        <textarea matInput [value]="petDTO.characteristic"
+        <textarea matInput [value]="petDto.characteristic"
                   rows="5" style="resize: none; color: black" disabled></textarea>
       </mat-form-field>
     </div>
     <div class="form-image">
-      <img [src]="'data:image/jpeg;base64,' + petDTO.encoded" class="preview" alt="Foto de Preview">
+      <img [src]="'data:image/jpeg;base64,' + petDto.encoded" class="preview" alt="Foto de Preview">
     </div>
   </div>
 

@@ -38,7 +38,7 @@ export class LoginComponent {
     await lastValueFrom(this.authService.login(this.loginUsuario))
       .then(value => {
         this.tokenService.setToken(value.token);
-        window.location.reload();
+        this.router.navigate(['/index']).then(() => window.location.reload());
       }).catch(reason => {
         this.errMsj = reason.error.mensaje;
         this.toastr.error(reason.error.mensaje, 'FAIL', {

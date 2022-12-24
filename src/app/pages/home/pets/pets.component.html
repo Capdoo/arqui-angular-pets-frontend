@@ -4,7 +4,7 @@
     <div *ngFor="let petDto of comboPets" class="content">
       <mat-card class="example-card" style="cursor: pointer" (click)="open(petDto)">
         <img mat-card-image [src]="'data:image/jpeg;base64,'+petDto.encoded | safePipe: 'resourceUrl'"
-             alt="Photo of a Shiba Inu">
+             alt="Photo of a Shiba Inu" height="200px">
         <mat-card-content>
           <p> Nombre: {{petDto.name}} <br>
             Género: {{petDto.gender}}<br>

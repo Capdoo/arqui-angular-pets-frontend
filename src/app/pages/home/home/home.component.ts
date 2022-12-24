@@ -5,6 +5,7 @@ import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
 import {HomeServicesService} from "../../../shared/services/general/home-services.service";
 import {PetDto} from "../../../shared/models/pet-dto";
 import {UserDetailsGuard} from "../../../shared/services/userDetails/user-details.guard";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,16 +17,17 @@ export class HomeComponent implements OnInit {
   ImgenPerfilAlt: String;
   ImgenPerfil: String;
   Name: String;
-  Username:String;
+  Username: String;
   //variable que almacena la imagen de perfil del usuario
   imagenPerfil: string;
+
   //variable que almacena la imagen de perfil del usuario
 
   constructor(private router: Router, private detailService: DetailsService, private homeServicesService: HomeServicesService, private userDetailsGuard: UserDetailsGuard) {
     /*this.homeServicesService.getAllPets().subscribe(data => {
       this.comboPet=data;
     });*/
-
+    sessionStorage.clear();
 
   }
 
@@ -33,17 +35,16 @@ export class HomeComponent implements OnInit {
     this.ImgenPerfilAlt = '../../../../assets/fotoPerfil.jpg';
 
     this.Name = 'María L.';
-    this.Username="@"+"marial";
+    this.Username = "@" + "marial";
     //console.log(this.comboPet);
 
     this.userDetailsGuard.getUserDetails().subscribe(data => {
       console.log(data);
-      this.Username="@"+data.username;
-      this.Name=data.lastName + " " + data.surName;
-      this.ImgenPerfil=data.encoded;
+      this.Username = "@" + data.username;
+      this.Name = data.lastName + " " + data.surName;
+      this.ImgenPerfil = data.encoded;
       console.log(this.ImgenPerfil);
       //variable que almacena la respuesta de lafunción función base64ToJpg
-
 
 
     });
@@ -51,6 +52,7 @@ export class HomeComponent implements OnInit {
       this.comboPet = data;
     });
   }
+
   onSubmit() {
     this.router.navigate(['/home/register-pet']).then();
   }
@@ -66,6 +68,7 @@ export class HomeComponent implements OnInit {
   perdido() {
     this.router.navigate(['/home/register-lost']).then();
   }
+
   base64ToJpeg(base64: string): HTMLImageElement {
     // Creamos un elemento de imagen
     const imgElement = document.createElement('img');
@@ -76,8 +79,8 @@ export class HomeComponent implements OnInit {
     // Devolvemos el elemento de imagen
     return imgElement;
   }
-  //convertir imagen de base64 a imagen
 
+  //convertir imagen de base64 a imagen
 
 
 }

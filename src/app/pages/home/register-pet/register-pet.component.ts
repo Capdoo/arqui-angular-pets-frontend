@@ -33,7 +33,6 @@ export class RegisterPetComponent {
   breed = new FormControl({value: '', disabled: true}, [Validators.required]);
   encoded = new FormControl(this.encodedValue, [Validators.required]);
   formGroup = new FormGroup({
-    idOwner: new FormControl(''),
     name: this.name,
     gender: this.gender,
     birthDate: this.birthDate,
