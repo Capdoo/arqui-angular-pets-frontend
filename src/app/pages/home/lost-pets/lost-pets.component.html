@@ -1,14 +1,14 @@
 <div style="padding-bottom: 30px">
   <p class="text-grid">Lista de mascota perdidas</p>
   <div class="grid">
-    <div *ngFor="let num of [1,2,3,4,5,6,7,8,9,10,11,12,14,15,16]" class="content">
-      <mat-card class="example-card" style="cursor: pointer" (click)="open(num)">
-        <img mat-card-image  src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-             alt="Photo of a Shiba Inu">
+    <div *ngFor="let petDto of comboPets" class="content">
+      <mat-card class="example-card" style="cursor: pointer" (click)="open(petDto)">
+        <img mat-card-image [src]="'data:image/jpeg;base64,'+petDto.encoded | safePipe: 'resourceUrl'"
+             alt="Photo of a Shiba Inu" height="200px">
         <mat-card-content>
-          <p> Nombre: {{num}} <br>
-            Nombre: {{num}}<br>
-            Nombre: {{num}}</p>
+          <p> Nombre: {{petDto.name}} <br>
+            Género: {{petDto.gender}}<br>
+            Color: {{petDto.colour}}</p>
         </mat-card-content>
       </mat-card>
     </div>

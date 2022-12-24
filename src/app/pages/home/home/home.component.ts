@@ -1,7 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {DetailsService} from "../../../shared/services/details/details.service";
-import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
+import {HomeServicesService} from "../../../shared/services/general/home-services.service";
+import {UserDetailsGuard} from "../../../shared/services/userDetails/user-details.guard";
+import Swal from "sweetalert2";
+import {lastValueFrom} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -9,14 +12,28 @@ import {BreedxSpecieDTO} from "../../../shared/models/breedxSpecieDTO";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  imagenPerfil = "assets/account-default.png";
+  Name: string;
+  Username: string;
 
-  comboBreedxSpecie: BreedxSpecieDTO[]
-
-  constructor(private router: Router, private detailService: DetailsService) {
-
+  constructor(private router: Router, private detailService: DetailsService, private homeServicesService: HomeServicesService, private userDetailsGuard: UserDetailsGuard) {
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    Swal.fire({
+      title: 'Espere por favor',
+      didOpen: () => Swal.showLoading(null),
+      allowOutsideClick: false
+    }).then();
+    await lastValueFrom(this.userDetailsGuard.getUserDetails())
+      .then(data => {
+        Swal.close();
+        this.Username = "@" + data.username;
+        this.Name = data.lastName + " " + data.surName;
+        this.imagenPerfil = "data:image/png;base64," + data.encoded;
+      }).catch(reason => Swal.fire({
+        title: 'Error', text: reason.error.message, icon: 'error'
+      }).finally(() => Swal.close()));
   }
 
   onSubmit() {
@@ -29,9 +46,5 @@ export class HomeComponent implements OnInit {
 
   verPerdidos() {
     this.router.navigate(['/home/lost-pets']).then();
-  }
-
-  perdido() {
-    this.router.navigate(['/home/register-lost']).then();
   }
 }

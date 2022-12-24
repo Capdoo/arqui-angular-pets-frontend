@@ -5,7 +5,6 @@ import {HomeComponent} from "./home/home.component";
 import {RegisterPetComponent} from "./register-pet/register-pet.component";
 import {ReadPetComponent} from "./read-pet/read-pet.component";
 import {LostPetsComponent} from "./lost-pets/lost-pets.component";
-import {RegisterLostComponent} from "./register-lost/register-lost.component";
 import {PetsComponent} from "./pets/pets.component";
 
 
@@ -16,7 +15,6 @@ const routes: Routes = [
   {path:'pets', component: PetsComponent},
   {path:'read-pet', component: ReadPetComponent},
   {path:'lost-pets', component: LostPetsComponent},
-  {path:'register-lost', component: RegisterLostComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 
 ]

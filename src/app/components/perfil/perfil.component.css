@@ -1,20 +1,10 @@
-.col-sm-4{
-  border: 2px solid #ccc;
-  display: block;
 
-}
 .perfil{
   align-items: center;
   justify-content: center;
 }
-.col-sm-8{
-  border: 2px solid #ccc;
-}
-.row{
-  border: 2px solid #ccc;
-  margin: 10px;
-  padding: 10px;
-}
+
+
 .imagenPerfil{
   width:200px;
   height:200px;
@@ -27,11 +17,11 @@
  }
 
  button {
-  margin-top: 10px;
+  margin-top: 5px;
   cursor: pointer;
   font-weight: 700;
   transition: all .2s;
-  padding: 10px 20px;
+  padding:5px 20px;
   border-radius: 10px;
   background: #BE3C3C;
   border: 1px solid transparent;
@@ -41,7 +31,7 @@
 }
 
 button:hover {
-  background: #e92020;
+  background: #e05910;
 }
 
 button > svg {
@@ -71,7 +61,7 @@ line-height: 51px;
 
 
 .button-index {
-  padding: 10px 25px;
+  padding: 5px 20px;
   border: unset;
   border-radius: 10px;
   color: #e1c5c5;
@@ -108,5 +98,35 @@ line-height: 51px;
  .button-index:hover::before {
   width: 100%;
  }
+ .text-container-home{
+
+  margin-bottom: 100px;
+  width: 500px;
+  height: auto;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+  text-align:center;
+  justify-content: center;
+  text-align: center;
+}
+.contenedores{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.buttons-perfil{
+  margin: 40px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+.button-opciones{
+margin: 10px;
+padding: 5px 40px;
+border: unset;
+background-color: #575151;
+border-radius: 5px;
+}
 
 

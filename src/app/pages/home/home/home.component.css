@@ -1,0 +1,136 @@
+
+.perfil{
+  align-items: center;
+  justify-content: center;
+}
+
+
+.imagenPerfil{
+  width:200px;
+  height:200px;
+  border-radius:150px;
+  object-fit: fill;
+}
+.buttons{
+  display: block;
+  border: 2px solid rgb(202, 131, 131);
+ }
+
+ button {
+  margin-top: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all .2s;
+  padding:5px 20px;
+  border-radius: 10px;
+  background: #BE3C3C;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #e05910;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+.title{
+  font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+}
+.bienvenida{
+  font-style: normal;
+font-weight: 400;
+font-size: 42px;
+line-height: 51px;
+}
+
+
+.button-index {
+  padding: 5px 20px;
+  border: unset;
+  border-radius: 10px;
+  color: #e1c5c5;
+  z-index: 1;
+  background: #BE3C3C;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+ }
+
+ .button-index::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 2px;
+  background-color: #d31313;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+
+ .button-index:hover {
+  color: #e8e8e8;
+ }
+
+ .button-index:hover::before {
+  width: 100%;
+ }
+ .text-container-home{
+
+  margin-bottom: 100px;
+  width: 500px;
+  height: auto;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+  text-align:center;
+  justify-content: center;
+  text-align: center;
+}
+.contenedores{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.buttons-perfil{
+  margin: 40px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+.button-opciones{
+margin: 10px;
+padding: 5px 40px;
+border: unset;
+background-color: #575151;
+border-radius: 5px;
+}
+ul {
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+

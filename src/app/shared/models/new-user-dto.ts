@@ -8,7 +8,8 @@ export class NewUserDto {
     address: string;
     email: string;
     password: string;
-    constructor(username: string, dni: string, firstName: string, lastName: string, surName: string, phone: string, address: string, email: string, password: string) {
+    encoded: string;
+    constructor(username: string, dni: string, firstName: string, lastName: string, surName: string, phone: string, address: string, email: string, password: string, encoded: string) {
         this.username = username;
         this.dni = dni;
         this.firstName = firstName;
@@ -18,5 +19,6 @@ export class NewUserDto {
         this.address = address;
         this.email = email;
         this.password = password;
+        this.encoded = encoded;
     }
 }

@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4 align-items-center">
+  <div class="row contenedores">
+    <div class="col-sm-4 align-items-center text-container-home">
       <img src="{{ ImgenPerfil }}" class="imagenPerfil" alt="..." />
       <p class="title">
         {{ Name }}
@@ -12,10 +12,15 @@
         Lista de mascotas
         <li>Lucho</li>
         <li>Zeus</li>
+        <li>Lucho</li>
       </ul>
       <div class="buttons-perfil">
-        <button>
-          <span>Continue</span>
+        <button (click)="perdido()">
+
+          <span>
+            <p>Registrar</p>
+            <p>pérdida</p>
+          </span>
           <svg
             width="34"
             height="34"
@@ -36,8 +41,13 @@
             ></path>
           </svg>
         </button>
-        <button>
-          <span>Continue</span>
+        <button (click)="verPerdidos()">
+
+          <span>
+
+            <p>Ver</p>
+            <p>pérdidas</p>
+          </span>
           <svg
             width="34"
             height="34"
@@ -60,7 +70,7 @@
         </button>
       </div>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 text-container-home">
       <p class="bienvenida">¡BIENVENIDO NUEVAMENTE A PETS WORLD!</p>
 
       <p>Aquí podrás...</p>
@@ -68,13 +78,13 @@
         <hr />
         <p class="title">Registrar Mascota</p>
         <p>Registra tus macotas para poder solicitar ayuda en caso de pérdida</p>
-        <button type="button" class="button-index">Únete</button>
+        <button type="button" (click)="onSubmit()" class="button-index button-opciones">Ir</button>
       </div>
       <div class="contenedor-opciones">
         <hr />
         <p class="title">Ver tus mascotas</p>
         <p>Realizar sequimiento a tus mascotas</p>
-        <button type="button" class="button-index">Únete</button>
+        <button  type="button" (click)="verMascotas()" class="button-index button-opciones">Ir</button>
       </div>
     </div>
   </div>

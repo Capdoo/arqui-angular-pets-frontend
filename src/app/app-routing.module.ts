@@ -6,7 +6,7 @@ import {LoginGuard} from './guards/login.guard';
 import {LoginComponent} from "./pages/login/login.component";
 import {RegisterComponent} from "./pages/register/register.component";
 import {HomeGuard} from "./guards/home.guard";
-
+import {PerfilComponent} from "./components/perfil/perfil.component";
 
 const routes: Routes = [
   {
@@ -32,6 +32,11 @@ const routes: Routes = [
     path: 'registro',
     component: RegisterComponent,
     canActivate: [LoginGuard]
+  },
+  {
+    path: 'acciones',
+    component: PerfilComponent,
+    canActivate: [HomeGuard]
   },
 
   {

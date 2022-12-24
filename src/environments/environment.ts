@@ -4,15 +4,20 @@
 
 export const environment = {
   production: false,
-  baseURL : "http://localhost:8080",
-  authURL : 'http://localhost:8080/auth',
-  changePasswordURL : 'http://localhost:8080/email-password',
+  baseURL: 'http://localhost:8080',
+  // baseURL : "https://arqui-spring-pets-backend.herokuapp.com",
 
   // Controllers
+  authController: 'auth',
+  changePasswordController: 'change-password',
   detailsController: 'details',
   petsController: 'pets',
+  homeController: 'pets/read-user',
+  userDetailController:'users/read/single',
+
 
   // Methods
+  readUserMethod: 'read-user',
   readMethod: 'read',
   createMethod: 'create',
   updateMethod: 'update',
@@ -25,5 +30,5 @@ export const environment = {
  *
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
+ * import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
  */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
