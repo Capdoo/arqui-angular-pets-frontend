@@ -1,26 +1,42 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { IndexComponent } from './index/index.component';
-import { InterceptorsComponent } from './interceptors/interceptors.component';
-import { MenuComponent } from './menu/menu.component';
+import {AppComponent} from './app.component';
+import {IndexComponent} from './index/index.component';
+
+import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {ToastrModule} from 'ngx-toastr'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HeaderComponent} from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {LoginComponent} from "./pages/login/login.component";
+import {RegisterComponent} from "./pages/register/register.component";
+import {PerfilComponent} from "./components/perfil/perfil.component";
+import {interceptorProvider} from "./providers/interceptors/prod-interceptors.service";
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    IndexComponent,
     LoginComponent,
     RegisterComponent,
-    IndexComponent,
-    InterceptorsComponent,
-    MenuComponent
+    HeaderComponent,
+    FooterComponent,
+    PerfilComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule, // required animations module
+    HttpClientModule,
+    FormsModule, // ToastrModule added
+    ToastrModule.forRoot(
+    ),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [interceptorProvider]
 })
 export class AppModule { }

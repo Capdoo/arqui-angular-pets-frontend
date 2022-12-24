@@ -1,0 +1,89 @@
+<div style="padding: 0 20px">
+  <p style="text-align: center;font-size: xx-large">Registro de mascota</p>
+  <div style="display: flex">
+    <form [formGroup]="formGroup" class="form-group-register">
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput [formControl]="name">
+        <mat-error *ngIf="name.invalid">Este campo es requerido</mat-error>
+      </mat-form-field>
+
+      <div style="display: flex; justify-content: space-between;">
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label>Género</mat-label>
+          <mat-select [formControl]="gender" ngDefaultControl>
+            <mat-option [value]="'Hembra'"> Hembra</mat-option>
+            <mat-option [value]="'Macho'"> Macho</mat-option>
+          </mat-select>
+          <mat-error *ngIf="gender.invalid">Este campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 45%;" (click)="picker.open()">
+          <mat-label>Fecha de Nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" [formControl]="birthDate" readonly>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="birthDate.invalid">Este campo es requerido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div style="display: flex; justify-content: space-between;">
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label>Color</mat-label>
+          <input matInput [formControl]="colour">
+          <mat-error *ngIf="colour.invalid">Este campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label>Tamaño</mat-label>
+          <mat-select [formControl]="size" ngDefaultControl>
+            <mat-option [value]="'Pequeño'"> Pequeño</mat-option>
+            <mat-option [value]="'Mediano'"> Mediano</mat-option>
+            <mat-option [value]="'Grande'"> Grande</mat-option>
+          </mat-select>
+          <mat-error *ngIf="size.invalid">Este campo es requerido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div style="display: flex; justify-content: space-between;">
+        <mat-form-field appearance="fill" style="width: 45%;">
+          <mat-label>Especie</mat-label>
+          <mat-select [formControl]="species" ngDefaultControl (ngModelChange)="selectBreed()">
+            <mat-option *ngFor="let specieDTO of comboSpecie" [value]="specieDTO.data">
+              {{specieDTO.data}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="species.invalid">Este campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 45%;" (click)="messageRaza()">
+          <mat-label>Raza</mat-label>
+          <mat-select [formControl]="breed" ngDefaultControl>
+            <mat-option *ngFor="let breedDTO of comboBreed" [value]="breedDTO.data">
+              {{breedDTO.data}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="breed.invalid">Este campo es requerido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Características</mat-label>
+        <textarea matInput [formControl]="characteristic"
+                  rows="5" style="resize: none" required></textarea>
+        <mat-error *ngIf="characteristic.invalid">Este campo es requerido</mat-error>
+      </mat-form-field>
+
+
+      <button mat-raised-button color="primary" (click)="registerPet()"
+              [disabled]="formGroup.invalid || encoded.value == encodedValue">
+        Registrar
+      </button>
+    </form>
+    <div class="form-image">
+      <img [src]="encodedValue" class="preview" alt="Foto de Preview">
+      <button type="button" mat-raised-button (click)="fileInput.click()">Subir Foto</button>
+      <input type="file" accept="image/*" hidden (change)="onFileSelected($event)" #fileInput/>
+    </div>
+  </div>
+
+</div>

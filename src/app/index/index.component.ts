@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TokenService} from '../shared/services/general/token.service';
+
+//importar imagen
 
 @Component({
   selector: 'app-index',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+  ImagePath: string;
+  username: string;
 
-  constructor() { }
-
+  constructor(private tokenService: TokenService) { }
   ngOnInit(): void {
+    this.username = this.tokenService.getUserName();
+    this.ImagePath= '../../assets/image15.png';
   }
 
 }

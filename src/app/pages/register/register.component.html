@@ -1,0 +1,165 @@
+<div class="contenedor-register">
+  <div class="container text-container">
+    <div class="card">
+      <!-- Tabs -->
+      <div class="card-header">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Iniciar Sesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/registro">Crear Cuenta</a>
+          </li>
+          <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/sendemail">Olvidé mi contraseña</a>
+                </li> -->
+        </ul>
+      </div>
+      <!-- Formulario -->
+      <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="onRegister()" novalidate>
+          <!-- Para el ape paterno: lastName -->
+          <div class="form-group">
+            <label for="lastName">Apellido Paterno</label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              class="form-control"
+              [(ngModel)]="lastName"
+              required
+            />
+          </div>
+          <!--
+            <div class="form-group foto">
+            <label for="surName">Foto de perfil</label>
+            <input class="form-control" type="file" accept="image/*"  (change)="onFileSelected($event)" #fileInput/>
+          </div>
+          -->
+
+
+          <!-- Para el ape materno: surName -->
+          <div class="form-group">
+            <label for="surName">Apellido Materno</label>
+            <input
+              type="text"
+              name="surName"
+              id="surName"
+              class="form-control"
+              [(ngModel)]="surName"
+              required
+            />
+          </div>
+
+          <!-- Para el nombre: firstName -->
+          <div class="form-group">
+            <label for="firstName">Nombres</label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              class="form-control"
+              [(ngModel)]="firstName"
+              required
+            />
+          </div>
+
+          <!-- Para el email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-control"
+              [(ngModel)]="email"
+              required
+            />
+          </div>
+
+          <!-- Para el dni -->
+          <div class="form-group">
+            <label for="dni">Dni</label>
+            <input
+              type="text"
+              name="dni"
+              id="dni"
+              class="form-control"
+              [(ngModel)]="dni"
+              required
+            />
+          </div>
+          <!-- Para el nombre de usuario: username -->
+          <div class="form-group">
+            <label for="username">Nombre de Usuario</label>
+            <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="form-control"
+              [(ngModel)]="username"
+              required
+            />
+          </div>
+        </div>
+
+          <!-- Para la contrasena: password -->
+          <div class="form-group">
+            <label for="nombreUsuario">Constraseña</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control"
+              [(ngModel)]="password"
+              required
+            />
+          </div>
+
+          <!-- Para el telefono: phone -->
+          <div class="form-group">
+            <label for="phone">Telefono</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              class="form-control"
+              [(ngModel)]="phone"
+              required
+            />
+          </div>
+
+          <!-- Para la direccion: address -->
+          <div class="form-group">
+            <label for="address">Dirección</label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              class="form-control"
+              [(ngModel)]="address"
+              required
+            />
+          </div>
+          <div class="form-group foto">
+            <label for="surName">Foto de perfil</label>
+            <!--<button type="button" mat-raised-button (click)="fileInput.click()">Subir Foto</button>-->
+            <input class="form-control" type="file" accept="image/*"  (change)="onFileSelected($event)" #fileInput/>
+          </div>
+          <!-- Para los botones -->
+          <div class="form-group">
+            <button class="button-register" [disabled]="!f.valid">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              Crear cuenta
+            </button>
+          </div>
+
+        </form>
+        <!-- Para el error -->
+        <!-- Solo uso toastr -->
+      </div>
+    </div>
+  </div>
+</div>

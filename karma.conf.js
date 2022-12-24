@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/arqui-angular-pets-frontend'),
+      dir: require('path').join(__dirname, './coverage/pets-world'),
       subdir: '.',
       reporters: [
         { type: 'html' },

@@ -1,0 +1,97 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+.home-index{
+  padding: 10px;
+  margin: 10px;
+  min-height: 500px;
+  text-align:center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.in-flex{
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 350px;
+
+}
+.text-container{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+  text-align:center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+p{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  margin: 10px;
+  padding: 10px;
+  padding-bottom: 10px;
+}
+p.title{
+  font-size: 50px;
+  letter-spacing: 0em;
+
+  }
+.img{
+  padding: 25px;
+  border-radius: 40px;
+  min-width: 320px;
+  max-width: 600px;
+}
+
+.button-index {
+  padding: 10px 25px;
+  border: unset;
+  border-radius: 10px;
+  color: #e1c5c5;
+  z-index: 1;
+  background: #BE3C3C;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+ }
+
+ .button-index::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 2px;
+  background-color: #d31313;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+
+ .button-index:hover {
+  color: #e8e8e8;
+ }
+
+ .button-index:hover::before {
+  width: 100%;
+ }
+
+

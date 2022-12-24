@@ -1,0 +1,16 @@
+<div style="padding-bottom: 30px">
+  <p class="text-grid">Lista de mascota perdidas</p>
+  <div class="grid">
+    <div *ngFor="let petDto of comboPets" class="content">
+      <mat-card class="example-card" style="cursor: pointer" (click)="open(petDto)">
+        <img mat-card-image [src]="'data:image/jpeg;base64,'+petDto.encoded | safePipe: 'resourceUrl'"
+             alt="Photo of a Shiba Inu" height="200px">
+        <mat-card-content>
+          <p> Nombre: {{petDto.name}} <br>
+            Género: {{petDto.gender}}<br>
+            Color: {{petDto.colour}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
