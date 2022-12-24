@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
   ImgenPerfil: String;
   Name: String;
   Username:String;
+  //variable que almacena la imagen de perfil del usuario
+  imagenPerfil: string;
+  //variable que almacena la imagen de perfil del usuario
 
   constructor(private router: Router, private detailService: DetailsService, private homeServicesService: HomeServicesService, private userDetailsGuard: UserDetailsGuard) {
     /*this.homeServicesService.getAllPets().subscribe(data => {
@@ -38,8 +41,11 @@ export class HomeComponent implements OnInit {
       this.Username="@"+data.username;
       this.Name=data.lastName + " " + data.surName;
       this.ImgenPerfil=data.encoded;
-      //this.user= new NewUserDto(data[0].username,data.[0]dni,data[0].firstName,data.lastName,data.surName,data.phone,data.address,data.email,data.password,data.encoded);
-      //this.user= new NewUserDto(data[0].username,data.[0]dni,data[0].firstName,data.lastName,data.surName,data.phone,data.address,data.email,data.password,data.encoded);
+      console.log(this.ImgenPerfil);
+      //variable que almacena la respuesta de lafunción función base64ToJpg
+
+
+
     });
     this.homeServicesService.getAllPets().subscribe(data => {
       this.comboPet = data;
@@ -60,5 +66,18 @@ export class HomeComponent implements OnInit {
   perdido() {
     this.router.navigate(['/home/register-lost']).then();
   }
+  base64ToJpeg(base64: string): HTMLImageElement {
+    // Creamos un elemento de imagen
+    const imgElement = document.createElement('img');
+
+    // Establecemos el atributo src de la imagen como una URL codificada en base64
+    imgElement.src = `data:image/jpeg;base64,${base64}`;
+
+    // Devolvemos el elemento de imagen
+    return imgElement;
+  }
+  //convertir imagen de base64 a imagen
+
+
 
 }
