@@ -34,9 +34,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.ImgenPerfilAlt = '../../../../assets/fotoPerfil.jpg';
-
-    this.Name = 'María L.';
-    this.Username="@"+"marial";
     //console.log(this.comboPet);
 
     this.userDetailsGuard.getUserDetails().subscribe(data => {
@@ -47,9 +44,6 @@ export class HomeComponent implements OnInit {
 
 
 
-    });
-    this.homeServicesService.getAllPets().subscribe(data => {
-      this.comboPet = data;
     });
   }
   onSubmit() {
