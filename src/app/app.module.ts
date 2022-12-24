@@ -15,7 +15,7 @@ import {LoginComponent} from "./pages/login/login.component";
 import {RegisterComponent} from "./pages/register/register.component";
 import {PerfilComponent} from "./components/perfil/perfil.component";
 import {interceptorProvider} from "./providers/interceptors/prod-interceptors.service";
-
+import {SafePipePipe} from "./providers/pipes/safe-pipe.pipe";
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import {interceptorProvider} from "./providers/interceptors/prod-interceptors.se
     RegisterComponent,
     HeaderComponent,
     FooterComponent,
-    PerfilComponent
+    PerfilComponent,
+    SafePipePipe
   ],
   imports: [
     BrowserModule,
