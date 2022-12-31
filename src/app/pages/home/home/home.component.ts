@@ -29,7 +29,8 @@ export class HomeComponent implements OnInit {
       .then(data => {
         Swal.close();
         this.Username = "@" + data.username;
-        this.Name = data.lastName + " " + data.surName;
+        this.Name = data.firstName + " " + data.lastName;
+        // this.Name = data.lastName + " " + data.surName;
         this.imagenPerfil = "data:image/png;base64," + data.encoded;
       }).catch(reason => Swal.fire({
         title: 'Error', text: reason.error.message, icon: 'error'

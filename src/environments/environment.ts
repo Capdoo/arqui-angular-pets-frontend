@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://localhost:8080',
-  // baseURL : "https://arqui-spring-pets-backend.herokuapp.com",
+  // baseURL: 'http://localhost:8080',
+  baseURL : "https://arqui-spring-pets-backend.herokuapp.com",
 
   // Controllers
   authController: 'auth',
